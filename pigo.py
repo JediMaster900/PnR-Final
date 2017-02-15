@@ -118,7 +118,7 @@ class Pigo(object):
         time.sleep(1 * (enc / 18))
 
     def servo(self, val):
-        print('Moving servo to ' + srt(val) + 'deg')
+        print('Moving servo to ' + str(val) + 'deg')
         servo(val)
         time.sleep(.1)
 
