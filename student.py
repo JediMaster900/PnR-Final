@@ -81,7 +81,7 @@ class GoPiggy(pigo.Pigo):
         print('chicken')
         for x in range(3):
             self.servo(50)
-            self.encR(120)
+            self.servo(120)
 
 
 
