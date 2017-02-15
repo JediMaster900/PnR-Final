@@ -79,30 +79,9 @@ class GoPiggy(pigo.Pigo):
 
     def chicken(self):
         print('chicken')
-        for x in range(1):
-            self.encR(3)
-            self.encL(3)
-            self.encR(3)
-            self.encL(3)
-            self.encR(3)
-            self.encL(3)
-            self.encR(3)
-            time.sleep(1)
-            self.encR(3)
-            self.encL(3)
-            self.encR(3)
-            self.encL(3)
-            self.encR(3)
-            self.encL(3)
-            self.encR(3)
-            time.sleep(1)
-            self.encR(3)
-            self.encL(3)
-            self.encR(3)
-            self.encL(3)
-            self.encR(3)
-            self.encL(3)
-            self.encR(3)
+        for x in range(3):
+            self.servo(50)
+            self.encR(120)
 
 
 
