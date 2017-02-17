@@ -99,7 +99,7 @@ class GoPiggy(pigo.Pigo):
                 time.sleep(.2)
         for x in range(4):
             self.encF(2)
-            time.sleep(.2)
+            time.sleep(.05)
 
 
 
