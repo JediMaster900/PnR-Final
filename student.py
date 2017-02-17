@@ -98,7 +98,7 @@ class GoPiggy(pigo.Pigo):
                 self.servo(50)
                 time.sleep(.2)
         for x in range(4):
-            self.encF(.2)
+            self.encF(2)
 
 
 
