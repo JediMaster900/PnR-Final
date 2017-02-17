@@ -97,6 +97,8 @@ class GoPiggy(pigo.Pigo):
             if x == 2:
                 self.servo(50)
                 time.sleep(.2)
+        for x in range(4):
+            self.encf(.2)
 
 
 
