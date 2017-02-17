@@ -86,10 +86,10 @@ class GoPiggy(pigo.Pigo):
                 self.servo(50)
                 time.sleep(.2)
         for x in range(3):
-            self.servo(50)
             self.servo(120)
+            self.servo(50)
             if x == 2:
-                self.servo(50)
+                self.servo(120)
                 time.sleep(.2)
         for x in range(3):
             self.servo(50)
