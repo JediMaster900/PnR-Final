@@ -50,8 +50,8 @@ class GoPiggy(pigo.Pigo):
                 "c": ("Calibrate", self.calibrate),
                 "w": ("Sweep", self.sweep),
                 "s": ("Check status", self.status),
-                "q": ("Quit", quit)
                 "f": ("Look forward", self.servo(self.MIDPOINT),
+                "q": ("Quit", quit)
                 }
         # loop and print the menu...
         for key in sorted(menu.keys()):
