@@ -50,7 +50,7 @@ class GoPiggy(pigo.Pigo):
                 "c": ("Calibrate", self.calibrate),
                 "w": ("Sweep", self.sweep),
                 "s": ("Check status", self.status),
-                "f": ("Look forward", self.servo(self.MIDPOINT),
+                "f": ("Look forward", self.look_fwd),
                 "q": ("Quit", quit)
                 }
         # loop and print the menu...
@@ -61,12 +61,15 @@ class GoPiggy(pigo.Pigo):
         # activate the item selected
         menu.get(ans, [None, error])[1]()
 
+    def look_fwd(self):
+        self.servo(self.MIDPOINT)
+
     def sweep(self):
-        for x in range(20, 160, 2):
+        for x in range(self.MIDPOINT - 60, self.MIDPOINT + 60, 2):
             self.servo(x)
             if self.dist() < 30:
                 print("AAAHHHHH")
-                break
+                return
 
     #YOU DECIDE: How does your GoPiggy dance?
     def dance(self):
