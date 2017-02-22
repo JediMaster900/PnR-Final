@@ -62,6 +62,7 @@ class GoPiggy(pigo.Pigo):
         menu.get(ans, [None, error])[1]()
 
     def look_fwd(self):
+        print('Looking forward...')
         self.servo(self.MIDPOINT)
 
     def sweep(self):
