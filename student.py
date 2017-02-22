@@ -66,11 +66,16 @@ class GoPiggy(pigo.Pigo):
         self.servo(self.MIDPOINT)
 
     def sweep(self):
-        for x in range(self.MIDPOINT - 60, self.MIDPOINT + 60, 2):
-            self.servo(x)
-            if self.dist() < 30:
-                print("AAAHHHHH")
-                return
+        for y in range(3):
+            for x in range(self.MIDPOINT - 60, self.MIDPOINT + 60, 2):
+                self.servo(x)
+                if self.dist() < 30:
+                    print("AAAHHHHH")
+                    return
+            self.encR(7)
+        self.dance()
+
+
 
     #YOU DECIDE: How does your GoPiggy dance?
     def dance(self):
