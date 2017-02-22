@@ -51,6 +51,7 @@ class GoPiggy(pigo.Pigo):
                 "w": ("Sweep", self.sweep),
                 "s": ("Check status", self.status),
                 "q": ("Quit", quit)
+                "f": ("Look forward", self.servo(self.MIDPOINT))
                 }
         # loop and print the menu...
         for key in sorted(menu.keys()):
