@@ -66,7 +66,7 @@ class GoPiggy(pigo.Pigo):
         self.servo(self.MIDPOINT)
 
     def sweep(self):
-        for x in range(self.MIDPOINT - 60, self.MIDPOINT +, 2):
+        for x in range(self.MIDPOINT - 60, self.MIDPOINT + 60, 2):
             self.servo(x)
             self.scan[x] = self.dist()
         print("Here's what i saw: ")
