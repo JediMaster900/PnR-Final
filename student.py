@@ -100,7 +100,7 @@ class GoPiggy(pigo.Pigo):
 
     def restore_heading(self):
         print("Now I'll turn back to the starting position.")
-        return = 0
+
 
     #YOU DECIDE: How does your GoPiggy dance?
     def dance(self):
