@@ -100,8 +100,7 @@ class GoPiggy(pigo.Pigo):
 
     def restore_heading(self):
         print("Now I'll turn back to the starting position.")
-
-        #make self.turn_track go back to zero
+        return = 0
 
     #YOU DECIDE: How does your GoPiggy dance?
     def dance(self):
@@ -162,11 +161,11 @@ class GoPiggy(pigo.Pigo):
 
 
     def encR(self, enc):
-        super().encR(enc)
+        pigo.Pigo.encR(self, enc)
         self.turn_track += enc
 
     def encL(self, enc):
-        super().encL(enc)
+        pigo.Pigo.encL(self, enc)
         self.turn_track -= enc
 
 
