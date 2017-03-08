@@ -195,6 +195,7 @@ class GoPiggy(pigo.Pigo):
         print("[ Press CTRL + C to stop me, then run stop.py ]\n")
         print("-----------! NAVIGATION ACTIVATED !------------\n")
         # this is the loop part of the "main logic loop"
+    while True:
         if self.is_clear():
             self.cruise()
         answer = self.choose_path()
