@@ -196,14 +196,21 @@ class GoPiggy(pigo.Pigo):
         print("-----------! NAVIGATION ACTIVATED !------------\n")
         # this is the loop part of the "main logic loop"
         while True:
+            counter = 0
             if self.is_clear():
                 self.cruise()
             answer = self.choose_path()
             if answer == "left":
                 self.encL(6)
+                counter += 1
             elif answer == "right":
                 self.encR(6)
-    ############################w
+                counter += 1
+            if counter == +1:
+                self.restore_heading()
+
+
+    ############################
     ### NAV END ################
     ############################
     def cruise(self):
