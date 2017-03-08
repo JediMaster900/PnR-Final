@@ -203,7 +203,7 @@ class GoPiggy(pigo.Pigo):
                 self.encL(6)
             elif answer == "right":
                 self.encR(6)
-    ############################
+    ############################w
     ### NAV END ################
     ############################
     def cruise(self):
@@ -234,5 +234,7 @@ def quit():
 
 ##################################################################
 ######## The app starts right here when we instantiate our GoPiggy
-
+try:
 g = GoPiggy()
+except (KeyboardInterrupt, SystemExit):
+    g.stop()
