@@ -237,4 +237,5 @@ def quit():
 try:
     g = GoPiggy()
 except (KeyboardInterrupt, SystemExit):
-    g.stop()
+    from gopigo import *
+    stop()
