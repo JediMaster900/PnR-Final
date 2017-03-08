@@ -197,7 +197,7 @@ class GoPiggy(pigo.Pigo):
         # this is the loop part of the "main logic loop"
         if self.is_clear():
             self.cruise()
-        answer = slef.choose_path()
+        answer = self.choose_path()
         if answer == "left":
             self.encL(6)
         elif answer == "right":
@@ -207,7 +207,7 @@ class GoPiggy(pigo.Pigo):
     ############################
     def cruise(self):
         self.fwd()
-        while slef.is_clear():
+        while self.is_clear():
             time.sleep(.1)
         self.stop()
         self.encB(3)
