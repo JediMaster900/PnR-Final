@@ -199,15 +199,17 @@ class GoPiggy(pigo.Pigo):
             counter = 0
             if self.is_clear():
                 self.cruise()
-            if counter == 1:
-                self.restore_heading()
             answer = self.choose_path()
             if answer == "left":
                 self.encL(6)
+                self.encF(5)
                 counter += 1
             elif answer == "right":
                 self.encR(6)
+                self.encF(5)
                 counter += 1
+            if counter == 1:
+                self.restore_heading()
 
 
 
