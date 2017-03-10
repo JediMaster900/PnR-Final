@@ -213,7 +213,7 @@ class GoPiggy(pigo.Pigo):
     ### NAV END ################
     ############################
     def cruise(self):
-        self.fwd(5)
+        self.encF(5)
         while self.is_clear():
             time.sleep(.1)
         self.stop()
