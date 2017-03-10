@@ -198,7 +198,7 @@ class GoPiggy(pigo.Pigo):
         while True:
             counter = 0
             if self.is_clear():
-                self.cruise()
+                self.cruise(5)
                 self.restore_heading()
             answer = self.choose_path()
             if answer == "left":
