@@ -207,6 +207,7 @@ class GoPiggy(pigo.Pigo):
                 self.encR(6)
                 counter += 1
             if counter == +1:
+                self.encF(3)
                 self.restore_heading()
 
 
