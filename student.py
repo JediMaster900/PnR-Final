@@ -199,7 +199,6 @@ class GoPiggy(pigo.Pigo):
             counter = 0
             if self.is_clear():
                 self.cruise()
-                self.restore_heading()
             answer = self.choose_path()
             if answer == "left":
                 self.encL(6)
@@ -207,13 +206,16 @@ class GoPiggy(pigo.Pigo):
             elif answer == "right":
                 self.encR(6)
                 counter += 1
+            if counter == 1:
+                self.encF(5)
+                self.restore_heading()
 
 
     ############################
     ### NAV END ################
     ############################
     def cruise(self):
-        self.encF(5)
+        self.fwd()
         while self.is_clear():
             time.sleep(.1)
         self.stop()
