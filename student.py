@@ -205,13 +205,14 @@ class GoPiggy(pigo.Pigo):
                 counter = 0
             answer = self.choose_path()
             if answer == "left":
+                self.servo(self.MIDPOINT)
                 while self.dist() < self.STOP_DIST + 30:
                     self.encL(2)
-                    self.servo(self.MIDPOINT)
             elif answer == "right":
+                self.servo(self.MIDPOINT)
                 while self.dist() < self.STOP_DIST + 30:
                     self.encR(2)
-                    self.servo(self.MIDPOINT)
+
 
 
 
