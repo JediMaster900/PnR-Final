@@ -200,6 +200,8 @@ class GoPiggy(pigo.Pigo):
             if self.is_clear():
                 self.cruise()
                 counter += 1
+            if self.dist <= 5:
+                self.encB(3)
             if counter == 4:
                 self.restore_heading()
                 counter = 0
