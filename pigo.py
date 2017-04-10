@@ -154,7 +154,7 @@ class Pigo(object):
             print("Degree: "+str(x)+", distance: "+str(scan1))
             # While scanning, if it sees something 5 or less cm away, it will back up and continue with its scan.
             if scan1 <= 5:
-                self.encB(3)
+                self.encB(5)
             time.sleep(.01)
 
     def is_clear(self):
