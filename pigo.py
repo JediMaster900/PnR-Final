@@ -152,7 +152,7 @@ class Pigo(object):
                 scan1 = (scan1+scan2+scan3)/3
             self.scan[x] = scan1
             print("Degree: "+str(x)+", distance: "+str(scan1))
-            # While scanning, if it sees something 5 or less cm away, it will back up and continue with its scan.
+            # While scanning, if it sees something 8 or less cm away, it will back up and continue with its scan.
             if scan1 <= 8 and x > 80 and x < 100:
                 self.encB(5)
             time.sleep(.01)
