@@ -209,14 +209,10 @@ class GoPiggy(pigo.Pigo):
             if answer == "left":
                 self.servo(self.MIDPOINT)
                 while self.dist() < self.STOP_DIST + 30:
-                    if self.dist <= 5:
-                        self.encB(3)
                     self.encL(2)
             elif answer == "right":
                 self.servo(self.MIDPOINT)
                 while self.dist() < self.STOP_DIST + 30:
-                    if self.dist <= 5:
-                        self.encB(3)
                     self.encR(2)
 
 
