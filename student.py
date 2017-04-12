@@ -200,8 +200,6 @@ class GoPiggy(pigo.Pigo):
             if self.is_clear():
                 self.cruise()
                 counter += 1
-            if self.dist <= 5:
-                self.encB(3)
             if counter == 4:
                 self.restore_heading()
                 counter = 0
@@ -209,11 +207,11 @@ class GoPiggy(pigo.Pigo):
             if answer == "left":
                 self.servo(self.MIDPOINT)
                 while self.dist() < self.STOP_DIST + 30:
-                    self.encL(2)
+                    self.encL(3)
             elif answer == "right":
                 self.servo(self.MIDPOINT)
                 while self.dist() < self.STOP_DIST + 30:
-                    self.encR(2)
+                    self.encR(3)
 
 
 
