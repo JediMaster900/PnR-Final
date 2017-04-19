@@ -174,7 +174,7 @@ class Pigo(object):
                 scan1 = (scan1 + scan2 + scan3) / 3
             self.scan[x] = scan1
             print("Degree: " + str(x) + ", distance: " + str(scan1))
-            if scan1 < us_dist(20):
+            if scan1 < 20:
                 print("Doesn't look clear to me")
                 # Backs up so it doesn't get stuck in scanning loop
                 self.encB(5)
