@@ -177,7 +177,7 @@ class Pigo(object):
             if scan1 < 20:
                 print("Doesn't look clear to me")
                 # Backs up so it doesn't get stuck in scanning loop
-                self.encB(5)
+                self.encB(2)
                 return False
         return True
 
