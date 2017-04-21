@@ -178,7 +178,6 @@ class Pigo(object):
                 print("Doesn't look clear to me")
                 # Backs up so it doesn't get stuck in scanning loop
                 self.encB(5)
-                self.restore_heading()
                 return False
         return True
 
