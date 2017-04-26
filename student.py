@@ -210,7 +210,7 @@ class GoPiggy(pigo.Pigo):
                 # Continues to turn that way until path is clear
                 while self.dist() < self.STOP_DIST + 30:
                     self.encL(3)
-            elif answer == "right":
+            else:
                 self.servo(self.MIDPOINT)
                 while self.dist() < self.STOP_DIST + 30:
                     self.encR(3)
