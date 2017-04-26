@@ -201,11 +201,13 @@ class GoPiggy(pigo.Pigo):
                 self.cruise()
                 counter += 1
             if counter == 4:
+                # Returns to original direction at beginning of navigation
                 self.restore_heading()
                 counter = 0
             answer = self.choose_path()
             if answer == "left":
                 self.servo(self.MIDPOINT)
+                # Continues to turn that way until path is clear
                 while self.dist() < self.STOP_DIST + 30:
                     self.encL(3)
             elif answer == "right":
