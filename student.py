@@ -1,6 +1,7 @@
 import pigo
 import time
 import random
+import logging
 
 '''
 MR. A's Final Project Student Helper
@@ -14,6 +15,11 @@ class GoPiggy(pigo.Pigo):
     ########################
 
     def __init__(self):
+        LOG_LEVEL = logging.INFO
+        # LOG_LEVEL = logging.DEBUG
+        LOG_FILE = "/home/pi/PnR-Final/log_robot.log"
+        LOG_FORMAT = "%(asctime)s %(levelname)s %(message)s"
+        logging.basicConfig(filename=LOG_FILE, format=LOG_FORMAT, level=LOG_LEVEL)
         print("Your piggy has be instantiated!")
         # Our servo turns the sensor. What angle of the servo( ) method sets it straight?
         self.MIDPOINT = 90
@@ -45,7 +51,8 @@ class GoPiggy(pigo.Pigo):
     def menu(self):
         ## This is a DICTIONARY, it's a list with custom index values
         # You may change the menu if you'd like to add an experimental method
-        menu = {"n": ("Navigate forward", self.nav),
+        menu = {"a": ("Activate Face/Item recognition", self.face),
+                "n": ("Navigate forward", self.nav),
                 "d": ("Dance", self.dance),
                 "c": ("Calibrate", self.calibrate),
                 "t": ("Turn test", self.turn_test),
@@ -191,6 +198,7 @@ class GoPiggy(pigo.Pigo):
     ########################
 
     def nav(self):
+        logging.debug("Starting the nav method")
         print("-----------! NAVIGATION ACTIVATED !------------\n")
         print("[ Press CTRL + C to stop me, then run stop.py ]\n")
         print("-----------! NAVIGATION ACTIVATED !------------\n")
@@ -202,6 +210,7 @@ class GoPiggy(pigo.Pigo):
                 counter += 1
             if counter == 4:
                 # Returns to original direction at beginning of navigation
+                logging.info("Restoring heading, count at " +(counter))
                 self.restore_heading()
                 counter = 0
             answer = self.choose_path()
@@ -210,17 +219,17 @@ class GoPiggy(pigo.Pigo):
                 # Continues to turn that way until path is clear
                 while self.dist() < self.STOP_DIST + 30:
                     self.encL(3)
-            else:
+            if answer == "right":
                 self.servo(self.MIDPOINT)
                 while self.dist() < self.STOP_DIST + 30:
                     self.encR(3)
-
-
-
-
     ############################
     ### NAV END ################
     ############################
+
+    def face(self):
+        self.annotate
+
     def cruise(self):
         self.servo(self.MIDPOINT)
         self.fwd()
@@ -255,3 +264,5 @@ try:
 except (KeyboardInterrupt, SystemExit):
     from gopigo import *
     stop()
+except Exception as ee:
+    logging.error(ee.__str__())
