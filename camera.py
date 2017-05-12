@@ -7,6 +7,7 @@ class Cameraphoto(picamera.PiCamera):
     def __init__(self):
         PiCamera.__init__(self)
         self.menu()
+
     def menu(self):
         ## This is a DICTIONARY, it's a list with custom index values
         # You may change the menu if you'd like to add an experimental method
