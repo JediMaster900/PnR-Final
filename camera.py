@@ -1,6 +1,7 @@
 import time
 import picamera
 
+camera.rotation = 90
 with picamera.PiCamera() as camera:
     camera.resolution = (1024, 768)
     camera.start_preview()
