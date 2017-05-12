@@ -11,13 +11,7 @@ class Cameraphoto(picamera.PiCamera):
     def menu(self):
         ## This is a DICTIONARY, it's a list with custom index values
         # You may change the menu if you'd like to add an experimental method
-        menu = {"a": ("Activate Face/Item recognition", self.face),
-                "t": ("Take Picture", self.takepic),
-                "d": ("Dance", self.dance),
-                "c": ("Calibrate", self.calibrate),
-                "o": ("Turn test", self.turn_test),
-                "s": ("Check status", self.status),
-                "f": ("Look forward", self.look_fwd),
+        menu = {"t": ("Take Picture", self.takepic),
                 "q": ("Quit", quit)
                 }
         # loop and print the menu...
