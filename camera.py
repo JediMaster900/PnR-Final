@@ -12,7 +12,7 @@ class Cameraphoto(picamera.PiCamera):
         ## This is a DICTIONARY, it's a list with custom index values
         # You may change the menu if you'd like to add an experimental method
         menu = {"a": ("Activate Face/Item recognition", self.face),
-                "t": ("Take Picture", self.camera),
+                "t": ("Take Picture", self.takepic),
                 "d": ("Dance", self.dance),
                 "c": ("Calibrate", self.calibrate),
                 "o": ("Turn test", self.turn_test),
@@ -36,3 +36,10 @@ class Cameraphoto(picamera.PiCamera):
             # Camera warm-up time
             time.sleep(2)
             camera.capture('pic.jpg')
+
+
+try:
+    c = Cameraphoto()
+except (KeyboardInterrupt, SystemExit):
+    from gopigo import *
+    stop()
