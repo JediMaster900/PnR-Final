@@ -227,9 +227,6 @@ class GoPiggy(pigo.Pigo):
     ### NAV END ################
     ############################
 
-    def face(self):
-        self.annotate
-
     def cruise(self):
         self.servo(self.MIDPOINT)
         self.fwd()

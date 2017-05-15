@@ -16,13 +16,13 @@ class Cameraphoto(picamera.PiCamera):
         menu = {"t": ("Take Picture", self.takepic),
                 "q": ("Quit", quit)
                 }
-        # loop and print the menu...
-        for key in sorted(menu.keys()):
-            print(key + ":" + menu[key][0])
-        # store the user's answer
-        ans = raw_input("Your selection: ")
-        # activate the item selected
-        menu.get(ans, [None, error])[1]()
+    # loop and print the menu...
+    for key in sorted(menu.keys()):
+        print(key + ":" + menu[key][0])
+    # store the user's answer
+    ans = raw_input("Your selection: ")
+    # activate the item selected
+    menu.get(ans, [None, error])[1]()
 
     def takepic(self):
         with picamera.PiCamera() as camera:
@@ -33,6 +33,15 @@ class Cameraphoto(picamera.PiCamera):
             time.sleep(2)
             camera.capture('pic.jpg')
 
+#####################################################
+################STATIC FUNCTIONS#####################
+def error():
+    print('Error in input')
+
+
+def quit():
+    raise SystemExit
+#####################################################
 
 try:
     c = Cameraphoto()
