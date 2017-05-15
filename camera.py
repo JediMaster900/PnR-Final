@@ -1,6 +1,8 @@
 import picamera
 from picamera import PiCamera
 import time
+import pigo
+import logging
 
 class Cameraphoto(picamera.PiCamera):
 
